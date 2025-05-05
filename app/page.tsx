@@ -137,57 +137,93 @@ export default function Home() {
                     <span className="sr-only">Menu</span>
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                  <SheetHeader>
-                    <SheetTitle>Navigation Menu</SheetTitle>
+                <SheetContent side="right" className="w-[300px] sm:w-[400px] p-6">
+                  <SheetHeader className="border-b pb-4 mb-4">
+                    <SheetTitle className="text-2xl font-bold text-violet-600 dark:text-violet-400">
+                      Menu
+                    </SheetTitle>
                   </SheetHeader>
-                  <nav className="flex flex-col space-y-4 mt-8">
+                  <nav className="flex flex-col space-y-6">
                     <button
                       onClick={() => {
                         scrollToSection(experienceRef)
                         setIsMobileMenuOpen(false)
                       }}
-                      className="text-lg font-medium hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
+                      className="flex items-center space-x-2 text-lg font-medium hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
                     >
-                      Experience
+                      <span className="text-violet-600 dark:text-violet-400">01.</span>
+                      <span>Experience</span>
                     </button>
                     <button
                       onClick={() => {
                         scrollToSection(skillsRef)
                         setIsMobileMenuOpen(false)
                       }}
-                      className="text-lg font-medium hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
+                      className="flex items-center space-x-2 text-lg font-medium hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
                     >
-                      Skills
+                      <span className="text-violet-600 dark:text-violet-400">02.</span>
+                      <span>Skills</span>
                     </button>
                     <button
                       onClick={() => {
                         scrollToSection(accomplishmentsRef)
                         setIsMobileMenuOpen(false)
                       }}
-                      className="text-lg font-medium hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
+                      className="flex items-center space-x-2 text-lg font-medium hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
                     >
-                      Accomplishments
+                      <span className="text-violet-600 dark:text-violet-400">03.</span>
+                      <span>Accomplishments</span>
                     </button>
                     <button
                       onClick={() => {
                         scrollToSection(educationRef)
                         setIsMobileMenuOpen(false)
                       }}
-                      className="text-lg font-medium hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
+                      className="flex items-center space-x-2 text-lg font-medium hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
                     >
-                      Education
+                      <span className="text-violet-600 dark:text-violet-400">04.</span>
+                      <span>Education</span>
                     </button>
                     <button
                       onClick={() => {
                         scrollToSection(projectsRef)
                         setIsMobileMenuOpen(false)
                       }}
-                      className="text-lg font-medium hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
+                      className="flex items-center space-x-2 text-lg font-medium hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
                     >
-                      Projects
+                      <span className="text-violet-600 dark:text-violet-400">05.</span>
+                      <span>Projects</span>
                     </button>
                   </nav>
+                  <div className="mt-auto pt-8 border-t">
+                    <div className="flex justify-center space-x-6">
+                      <Link
+                        href="https://github.com/mdayeen"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-violet-600 dark:hover:text-violet-400"
+                      >
+                        <Github className="h-6 w-6" />
+                        <span className="sr-only">GitHub</span>
+                      </Link>
+                      <Link
+                        href="https://linkedin.com/in/mdyeen"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-violet-600 dark:hover:text-violet-400"
+                      >
+                        <Linkedin className="h-6 w-6" />
+                        <span className="sr-only">LinkedIn</span>
+                      </Link>
+                      <Link
+                        href="mailto:ayeen0410@gmail.com"
+                        className="text-muted-foreground hover:text-violet-600 dark:hover:text-violet-400"
+                      >
+                        <Mail className="h-6 w-6" />
+                        <span className="sr-only">Email</span>
+                      </Link>
+                    </div>
+                  </div>
                 </SheetContent>
               </Sheet>
             </div>
