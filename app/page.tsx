@@ -75,32 +75,6 @@ export default function Home() {
     },
   }
 
-  // Theme debugging component
-  const ThemeDebug = () => {
-    const { theme, setTheme } = useTheme()
-    const [mounted, setMounted] = useState(false)
-
-    useEffect(() => {
-      setMounted(true)
-    }, [])
-
-    if (!mounted) return null
-
-    return (
-      <div className="fixed bottom-4 right-4 z-50 bg-background border border-border rounded-md p-2 shadow-md">
-        <p className="text-xs">Current theme: {theme}</p>
-        <div className="flex gap-2 mt-1">
-          <button onClick={() => setTheme("light")} className="text-xs px-2 py-1 bg-secondary rounded-md">
-            Force Light
-          </button>
-          <button onClick={() => setTheme("dark")} className="text-xs px-2 py-1 bg-secondary rounded-md">
-            Force Dark
-          </button>
-        </div>
-      </div>
-    )
-  }
-
   return (
     <>
       {/* Structured Data for SEO */}
@@ -564,7 +538,7 @@ export default function Home() {
                       "Landing Page",
                       "Mailto Integration",
                     ],
-                    github: "https://github.com/mdayeen/overseas-consultancy-template",
+                    github: "https://github.com/mdayeen/Overseas-Teamplate",
                     demo: "https://mau-overseas.netlify.app/",
                   },
                   {
@@ -656,7 +630,6 @@ export default function Home() {
             </div>
           </div>
         </footer>
-        <ThemeDebug />
       </div>
     </>
   )
