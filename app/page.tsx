@@ -528,7 +528,7 @@ export default function Home() {
                     description: "Task management app with automated SMS and email reminders for deadlines.",
                     tags: ["MongoDB", "Express", "React", "Node", "React Hooks", "CSS", "Nodemailer", "Twilio"],
                     github: "https://github.com/mdayeen/mytask",
-                    demo: "https://task-manager-demo.example.com",
+                    demo: "https://mytask-beryl.vercel.app/",
                   },
                   {
                     title: "Email Template Builder",
