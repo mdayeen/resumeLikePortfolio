@@ -74,9 +74,29 @@ export default function Home() {
       },
     },
   }
+    // Google Analytics Integration
+  const GA_MEASUREMENT_ID = "G-LDTY0HJP4Y"
 
   return (
     <>
+          {/* Google Analytics - Global site tag (gtag.js) */}
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+      />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `,
+        }}
+      />
+
       {/* Structured Data for SEO */}
       <Script
         id="structured-data"
