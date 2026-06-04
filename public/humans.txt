@@ -1,0 +1,17 @@
+/* TEAM */
+    Developer: Mohammed Ayeenuddin
+    Site: https://mdayeen.xyz
+    Twitter: @mdayeen
+    LinkedIn: mdyeen
+    GitHub: mdayeen
+    Location: Hyderabad, Telangana, India
+
+/* THANKS */
+    Co-Founder Partner: Anjeer Labs Team
+    Mentors: Code For India Org
+
+/* SITE TECHNOLOGY */
+    Framework: Next.js 15
+    Component Library: Shadcn UI & Tailwind CSS
+    Deployment: Vercel Cloud
+    Analytics: Google Analytics & Microsoft Clarity

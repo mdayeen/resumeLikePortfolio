@@ -7,28 +7,40 @@ import type { Metadata } from "next"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Mohammed Ayeenuddin | Full Stack MERN Developer | Hyderabad, India",
+  metadataBase: new URL("https://mdayeen.xyz"),
+  title: {
+    default: "Mohammed Ayeenuddin | Full Stack MERN Developer | Hyderabad, India",
+    template: "%s | Mohammed Ayeenuddin"
+  },
   description:
-    "Full Stack Developer from Hyderabad, India specializing in MERN stack and SaaS development. Experienced in React, Node.js, MongoDB, Express.js, and modern web technologies. Available for remote and local opportunities.",
+    "Official portfolio of Mohammed Ayeenuddin, Full Stack MERN Developer, SaaS Architect, and Co-Founder of Anjeer Labs based in Hyderabad, India. Specialized in React, Node.js, Next.js, and scale ERP architectures.",
   keywords: [
     "Full Stack Developer",
-    "MERN Stack",
+    "MERN Stack Developer",
+    "Anjeer Labs",
+    "Anjeer Labs Hyderabad",
     "SaaS Developer",
     "React Developer",
     "Node.js Developer",
     "MongoDB",
     "Express.js",
     "Hyderabad Developer",
-    "Web Development",
+    "Web Development Hyderabad",
     "JavaScript Developer",
     "TypeScript",
-    "Next.js",
+    "Next.js Developer",
     "Mohammed Ayeenuddin",
+    "Mohammed Ayeenuddin Developer",
+    "Mohammed Ayeenuddin Hyderabad",
+    "Mohammed Ayeenuddin MERN Developer",
+    "Ayeenuddin Software Developer",
+    "Mohammed Ayeenuddin Anjeer Labs",
     "Frontend Developer",
     "Backend Developer",
     "India Developer",
     "Remote Developer",
     "Full Stack Engineer",
+    "ERP Architect",
     "Web Application Developer",
     "API Development",
     "Database Design",
@@ -37,7 +49,7 @@ export const metadata: Metadata = {
     "Progressive Web Apps",
     "Cloud Development"
   ],
-  authors: [{ name: "Mohammed Ayeenuddin", url: "https://mdayeen.vercel.app/" }],
+  authors: [{ name: "Mohammed Ayeenuddin", url: "https://mdayeen.xyz" }],
   creator: "Mohammed Ayeenuddin",
   publisher: "Mohammed Ayeenuddin",
   formatDetection: {
@@ -58,35 +70,35 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "profile",
-    locale: "en_US",
-    url: "https://mdayeen.vercel.app/",
-    title: "Mohammed Ayeenuddin | Full Stack MERN Developer | Hyderabad, India",
+    locale: "en_IN",
+    url: "https://mdayeen.xyz",
+    title: "Mohammed Ayeenuddin | Full Stack MERN Developer & Co-Founder of Anjeer Labs",
     description:
-      "Full Stack Developer from Hyderabad, India specializing in MERN stack and SaaS development. Experienced in React, Node.js, MongoDB, Express.js, and modern web technologies. Available for remote and local opportunities.",
+      "Official portfolio of Mohammed Ayeenuddin, Full Stack MERN Developer, SaaS Architect, and Co-Founder of Anjeer Labs based in Hyderabad, India.",
     siteName: "Mohammed Ayeenuddin Portfolio",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Mohammed Ayeenuddin - Full Stack Developer from Hyderabad, India",
+        alt: "Mohammed Ayeenuddin - Full Stack Developer & Co-Founder of Anjeer Labs",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohammed Ayeenuddin | Full Stack MERN Developer | Hyderabad, India",
+    title: "Mohammed Ayeenuddin | Full Stack MERN Developer & Co-Founder of Anjeer Labs",
     description:
-      "Full Stack Developer from Hyderabad, India specializing in MERN stack and SaaS development. Experienced in React, Node.js, MongoDB, Express.js, and modern web technologies. Available for remote and local opportunities.",
+      "Official portfolio of Mohammed Ayeenuddin, Full Stack MERN Developer, SaaS Architect, and Co-Founder of Anjeer Labs based in Hyderabad, India.",
     images: ["/og-image.png"],
     creator: "@mdayeen",
     site: "@mdayeen",
   },
   alternates: {
-    canonical: "https://mdayeen.vercel.app/",
+    canonical: "./",
   },
   verification: {
-    google: "your-google-site-verification", // Add your Google Search Console verification code
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "your-google-site-verification",
   },
   category: "technology",
   generator: 'mdayeen'

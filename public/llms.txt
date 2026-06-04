@@ -1,0 +1,22 @@
+# Mohammed Ayeenuddin
+
+Full Stack MERN Developer, SaaS Architect, and Co-Founder of Anjeer Labs based in Hyderabad, India.
+
+## Professional Profiles
+- URL: https://mdayeen.xyz
+- GitHub: https://github.com/mdayeen
+- LinkedIn: https://linkedin.com/in/mdyeen
+- Agency: https://anjeerlabs.com
+
+## Technical Stack
+- Languages: JavaScript, TypeScript, SQL, HTML, CSS
+- Web Frameworks: React, Next.js 15 (App Router), Node.js, Express.js
+- Databases: PostgreSQL, MongoDB, Redis
+- Infrastructure: AWS, Cloudflare (R2, DNS, Workers), Vercel, Docker
+
+## Key Projects
+1. **Rotana Store Platform**: Enterprise WMS & Franchise ERP. Built with Next.js, PostgreSQL, Node.js. Controls stock synchronizations, credits ledger limits, suppliers management pipelines, and delivery schedules.
+2. **Al-Fahads Tours & Travels Portal**: Booking management dashboard using Cloudflare R2 storage buckets and advanced RBAC permission configurations.
+3. **AI-Powered Resume SaaS**: Automation resume generator leveraging OpenAI completions and React canvas compilers.
+4. **Drag-and-Drop Email Editor**: WYSIWYG newsletter builder rendering responsive HTML and JSON schemas.
+5. **Multi-Role School ERP**: Multi-tenant academic management platform controlling billing, attendance logs, and alerts.
