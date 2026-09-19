@@ -1,22 +1,31 @@
 # Mohammed Ayeenuddin
 
-Full Stack MERN Developer, SaaS Architect, and Co-Founder of Anjeer Labs based in Hyderabad, India.
+> Mohammed Ayeenuddin (Ayeen) is a full stack developer based in Hyderabad, India, and co-founder of Anjeer Labs, an education-first technology company. He builds web applications, SaaS products, and business management software.
 
-## Professional Profiles
-- URL: https://mdayeen.xyz
-- GitHub: https://github.com/mdayeen
-- LinkedIn: https://linkedin.com/in/mdyeen
-- Agency: https://anjeerlabs.com
+## Profile and contact
 
-## Technical Stack
-- Languages: JavaScript, TypeScript, SQL, HTML, CSS
-- Web Frameworks: React, Next.js 15 (App Router), Node.js, Express.js
-- Databases: PostgreSQL, MongoDB, Redis
-- Infrastructure: AWS, Cloudflare (R2, DNS, Workers), Vercel, Docker
+- [Agent view](https://mdayeen.xyz/agents): Server-rendered profile, selected work, technical focus, and contact information.
+- [Complete plain-text profile](https://mdayeen.xyz/llms-full.txt): The profile and selected projects in one document.
+- [Structured profile](https://mdayeen.xyz/profile.json): The same public facts in JSON.
+- [Visual portfolio](https://mdayeen.xyz): Interactive portfolio.
+- [Book a conversation](https://cal.com/anjeerlabs): Primary project inquiry and booking link.
+- [Email Ayeen](mailto:ayeen0410@gmail.com): Direct email contact.
+- [Anjeer Labs](https://anjeerlabs.com): Education-first technology company co-founded by Ayeen.
 
-## Key Projects
-1. **Rotana Store Platform**: Enterprise WMS & Franchise ERP. Built with Next.js, PostgreSQL, Node.js. Controls stock synchronizations, credits ledger limits, suppliers management pipelines, and delivery schedules.
-2. **Al-Fahads Tours & Travels Portal**: Booking management dashboard using Cloudflare R2 storage buckets and advanced RBAC permission configurations.
-3. **AI-Powered Resume SaaS**: Automation resume generator leveraging OpenAI completions and React canvas compilers.
-4. **Drag-and-Drop Email Editor**: WYSIWYG newsletter builder rendering responsive HTML and JSON schemas.
-5. **Multi-Role School ERP**: Multi-tenant academic management platform controlling billing, attendance logs, and alerts.
+## Selected projects
+
+- [Rotana Store Platform](https://rotana-web-app.vercel.app/): Warehouse and franchise management for inventory, supplier workflows, credit ledgers, and deliveries.
+- [School Repo](https://schoolrepo.com): School ERP from Anjeer Labs covering students, attendance, fees, payroll, academics, inventory, and role-based permissions.
+- [Hamuzair](https://www.hamuzair.com): Custom apparel with AI artwork generation, a live 3D garment customizer, and made-to-order ecommerce.
+
+## Professional profiles
+
+- [GitHub](https://github.com/mdayeen)
+- [LinkedIn](https://linkedin.com/in/mdyeen)
+- [X](https://x.com/mdayeen)
+
+## Optional
+
+- [Project archive](https://mdayeen.xyz/projects): Additional projects and case studies.
+- [Writing](https://mdayeen.xyz/blog): Articles on web development and software architecture.
+- [Privacy policy](https://mdayeen.xyz/privacy-policy): Visitor counters, browser preferences, the optional game leaderboard, and external contact links.

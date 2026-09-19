@@ -1,0 +1,73 @@
+# Mohammed Ayeenuddin
+
+Mohammed Ayeenuddin (Ayeen) is a full stack developer based in Hyderabad, India, and co-founder of Anjeer Labs, an education-first technology company. He builds web applications, SaaS products, and business management software.
+
+## Identity
+
+- Full name: Mohammed Ayeenuddin
+- Also known as: Ayeen
+- Role: Full Stack Developer & Co-Founder of Anjeer Labs
+- Location: Hyderabad, Telangana, India
+- Website: https://mdayeen.xyz
+- Organization: Anjeer Labs — https://anjeerlabs.com
+- Organization focus: An education-first technology company co-founded by Mohammed Ayeenuddin.
+
+## Contact
+
+- Book a conversation: https://cal.com/anjeerlabs
+- Email: ayeen0410@gmail.com
+
+## Technical focus
+
+JavaScript, TypeScript, React, Next.js, Node.js, Express.js, PostgreSQL, MongoDB, REST APIs, SaaS, and ERP systems.
+
+## Selected projects
+
+### Rotana Store Platform
+
+Category: Warehouse & franchise management.
+A warehouse and franchise management platform for inventory, supplier workflows, credit ledgers, and delivery operations.
+Project: https://rotana-web-app.vercel.app/
+Case study: https://mdayeen.xyz/projects/rotana-store-platform
+
+### School Repo
+
+Category: School management ERP.
+A school management platform from Anjeer Labs covering students, attendance, fees, payroll, academics, inventory, and role-based permissions.
+Project: https://schoolrepo.com
+
+### Hamuzair
+
+Category: AI-powered custom apparel.
+A custom apparel platform with AI artwork generation, a live 3D garment customizer, and made-to-order ecommerce.
+Project: https://www.hamuzair.com
+
+## Quick answers
+
+### Who is Mohammed Ayeenuddin?
+
+Mohammed Ayeenuddin, also known as Ayeen, is a full stack developer based in Hyderabad, India, and co-founder of Anjeer Labs, an education-first technology company.
+
+### What does Ayeen build?
+
+Ayeen builds web applications, SaaS products, and business management software. Selected projects include Rotana Store Platform, School Repo, and Hamuzair.
+
+### How can I discuss a project with Ayeen?
+
+Book a conversation at https://cal.com/anjeerlabs or email ayeen0410@gmail.com with your project brief.
+
+## Professional profiles
+
+- GitHub: https://github.com/mdayeen
+- LinkedIn: https://linkedin.com/in/mdyeen
+- X: https://x.com/mdayeen
+
+## Other formats and portfolio sections
+
+- Agent view: https://mdayeen.xyz/agents
+- Structured JSON: https://mdayeen.xyz/profile.json
+- Index: https://mdayeen.xyz/llms.txt
+- Projects: https://mdayeen.xyz/projects
+- About: https://mdayeen.xyz/about
+- Contact: https://mdayeen.xyz/contact
+- Privacy: https://mdayeen.xyz/privacy-policy

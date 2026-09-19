@@ -186,7 +186,7 @@ export default function Blog() {
       <main className="container py-12 max-w-5xl space-y-10">
         {/* Header */}
         <section className="space-y-4">
-          <div className="flex items-center gap-2 text-violet-600 dark:text-violet-400 font-semibold text-sm uppercase tracking-wider">
+          <div className="flex items-center gap-2 text-lime-700 dark:text-lime-400 font-semibold text-sm uppercase tracking-wider">
             <Sparkles className="h-4 w-4" /> Technical Articles
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
@@ -202,15 +202,15 @@ export default function Blog() {
         {/* Blog Articles Grid */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {articles.map((art, idx) => (
-            <Card key={idx} className="bg-card text-card-foreground border flex flex-col justify-between overflow-hidden hover:border-violet-500/30 transition-all duration-300">
+            <Card key={idx} className="bg-card text-card-foreground border flex flex-col justify-between overflow-hidden hover:border-lime-500/30 transition-all duration-300">
               <CardHeader className="space-y-3 pb-4">
                 <div className="flex justify-between items-center text-xs text-muted-foreground">
-                  <Badge variant="secondary" className="bg-violet-100/55 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400 font-semibold">
+                  <Badge variant="secondary" className="bg-lime-100/55 dark:bg-lime-950/40 text-lime-700 dark:text-lime-400 font-semibold">
                     {art.category}
                   </Badge>
                   <span className="flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {art.readTime}</span>
                 </div>
-                <CardTitle className="text-xl font-bold leading-tight hover:text-violet-600 dark:hover:text-violet-400 transition-colors">
+                <CardTitle className="text-xl font-bold leading-tight hover:text-lime-700 dark:hover:text-lime-400 transition-colors">
                   <Link href={`/blog/${art.slug}`}>{art.title}</Link>
                 </CardTitle>
                 <CardDescription className="text-sm leading-relaxed text-muted-foreground pt-1">
@@ -221,7 +221,7 @@ export default function Blog() {
                 <span className="text-xs text-muted-foreground flex items-center gap-1">
                   <Calendar className="h-3.5 w-3.5" /> {art.date}
                 </span>
-                <Button variant="ghost" size="sm" asChild className="text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 p-0 hover:bg-transparent">
+                <Button variant="ghost" size="sm" asChild className="text-lime-700 dark:text-lime-400 hover:text-lime-800 dark:hover:text-lime-300 p-0 hover:bg-transparent">
                   <Link href={`/blog/${art.slug}`} className="gap-1 flex items-center">
                     Read Article <ArrowRight className="h-4 w-4" />
                   </Link>

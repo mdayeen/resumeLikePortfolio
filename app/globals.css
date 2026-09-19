@@ -4,48 +4,48 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 270 95% 58%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --background: 48 29.41% 93.33%;
+    --foreground: 120 5.56% 7.06%;
+    --card: 48 29.41% 96%;
+    --card-foreground: 120 5.56% 7.06%;
+    --popover: 48 29.41% 96%;
+    --popover-foreground: 120 5.56% 7.06%;
+    --primary: 76.12 100% 68.63%;
+    --primary-foreground: 120 5.56% 7.06%;
+    --secondary: 72.86 23.33% 88.24%;
+    --secondary-foreground: 120 5.56% 7.06%;
+    --muted: 72.86 23.33% 88.24%;
+    --muted-foreground: 80.63 19.05% 32.94%;
+    --accent: 72.86 23.33% 88.24%;
+    --accent-foreground: 120 5.56% 7.06%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 270 95% 58%;
+    --border: 80 15% 78%;
+    --input: 80 15% 78%;
+    --ring: 80.63 19.05% 32.94%;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 270 95% 75%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+    --background: 120 5.56% 7.06%;
+    --foreground: 48 29.41% 93.33%;
+    --card: 90 11.11% 10.59%;
+    --card-foreground: 48 29.41% 93.33%;
+    --popover: 90 11.11% 10.59%;
+    --popover-foreground: 48 29.41% 93.33%;
+    --primary: 76.12 100% 68.63%;
+    --primary-foreground: 120 5.56% 7.06%;
+    --secondary: 92.73 14.67% 14.71%;
+    --secondary-foreground: 48 29.41% 93.33%;
+    --muted: 92.73 14.67% 14.71%;
+    --muted-foreground: 82.11 12.1% 69.22%;
+    --accent: 92.73 14.67% 14.71%;
+    --accent-foreground: 48 29.41% 93.33%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 270 95% 75%;
+    --border: 86.25 15.38% 20.39%;
+    --input: 86.25 15.38% 20.39%;
+    --ring: 76.12 100% 68.63%;
   }
 }
 
@@ -54,9 +54,103 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
   }
   html {
     @apply scroll-smooth;
+  }
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 4px;
+  }
+  [id] {
+    scroll-margin-top: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Native SVG cursors keep pointer movement immediate, without a tracking loop. */
+@media (hover: hover) and (pointer: fine) and (forced-colors: none) {
+  body {
+    cursor:
+      url("/cursors/learn-code.svg") 3 3,
+      default;
+  }
+
+  body
+    :where(
+      a[href],
+      button,
+      [role="button"],
+      summary,
+      select,
+      label[for],
+      input[type="button"],
+      input[type="submit"],
+      input[type="reset"],
+      input[type="checkbox"],
+      input[type="radio"]
+    ) {
+    cursor:
+      url("/cursors/learn-code-link.svg") 3 3,
+      pointer !important;
+  }
+
+  body
+    :where(
+      a[href],
+      button,
+      [role="button"],
+      summary,
+      select,
+      label[for],
+      input[type="button"],
+      input[type="submit"],
+      input[type="reset"],
+      input[type="checkbox"],
+      input[type="radio"]
+    ):active {
+    cursor:
+      url("/cursors/learn-code-press.svg") 3 3,
+      pointer !important;
+  }
+
+  body
+    :where(
+      input:not([type]),
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="search"],
+      input[type="url"],
+      input[type="tel"],
+      input[type="number"],
+      textarea,
+      [contenteditable=""],
+      [contenteditable="true"],
+      [role="textbox"]
+    ) {
+    cursor: text !important;
+  }
+
+  body :where(input[type="range"], [role="slider"]) {
+    cursor: ew-resize !important;
+  }
+
+  body :where([draggable="true"]) {
+    cursor: grab !important;
+  }
+
+  body :where([draggable="true"]):active {
+    cursor: grabbing !important;
+  }
+
+  body :is(:disabled, [aria-disabled="true"]) {
+    cursor: not-allowed !important;
   }
 }

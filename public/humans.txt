@@ -1,17 +1,17 @@
 /* TEAM */
     Developer: Mohammed Ayeenuddin
+    Email: ayeen0410@gmail.com
     Site: https://mdayeen.xyz
-    Twitter: @mdayeen
-    LinkedIn: mdyeen
-    GitHub: mdayeen
+    Book a conversation: https://cal.com/anjeerlabs
+    Organization: Anjeer Labs — https://anjeerlabs.com
+    Organization focus: Education-first technology company
+    GitHub: https://github.com/mdayeen
+    LinkedIn: https://linkedin.com/in/mdyeen
     Location: Hyderabad, Telangana, India
 
-/* THANKS */
-    Co-Founder Partner: Anjeer Labs Team
-    Mentors: Code For India Org
-
-/* SITE TECHNOLOGY */
-    Framework: Next.js 15
-    Component Library: Shadcn UI & Tailwind CSS
-    Deployment: Vercel Cloud
-    Analytics: Google Analytics & Microsoft Clarity
+/* SITE */
+    Framework: Next.js
+    Interface: React, TypeScript, CSS, SVG
+    Agent view: https://mdayeen.xyz/agents
+    Plain text: https://mdayeen.xyz/llms-full.txt
+    Structured profile: https://mdayeen.xyz/profile.json

@@ -1,142 +1,65 @@
-import { Metadata } from "next"
-import { Mail, Phone, MapPin, ExternalLink, Calendar, Send } from "lucide-react"
-
+import type { Metadata } from "next"
+import { Mail, MapPin, Github, Calendar, ArrowUpRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Header } from "@/components/header"
+import { organizationSchema, personSchema, profile, serializeJsonLd } from "@/lib/profile"
 
 export const metadata: Metadata = {
-  title: "Contact Mohammed Ayeenuddin | Full Stack MERN Developer",
-  description: "Get in touch with Mohammed Ayeenuddin, Full Stack MERN Developer and Co-Founder of Anjeer Labs. Based in Hyderabad, India. Available for contract work, SaaS consulting, and agency assignments.",
-  alternates: {
-    canonical: "./",
-  }
+  title: "Contact & Project Inquiries",
+  description: "Discuss a web application, SaaS product, or development project with Mohammed Ayeenuddin. Book a conversation with Anjeer Labs or email ayeen0410@gmail.com.",
+  alternates: { canonical: "/contact" },
 }
 
 export default function Contact() {
-  const localBusinessSchema = {
+  const schema = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "@id": "https://mdayeen.xyz/#localbusiness",
-    "name": "Mohammed Ayeenuddin - Full Stack Developer",
-    "image": "https://mdayeen.xyz/placeholder-user.jpg",
-    "priceRange": "$$",
-    "telephone": "+918919066592",
-    "email": "ayeen@mdayeen.xyz",
-    "url": "https://mdayeen.xyz",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Hyderabad",
-      "addressRegion": "Telangana",
-      "addressCountry": "India"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "17.3850",
-      "longitude": "78.4867"
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-      ],
-      "opens": "09:00",
-      "closes": "19:00"
-    }
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "@id": `${profile.url}/contact#webpage`,
+        name: "Contact Mohammed Ayeenuddin",
+        url: `${profile.url}/contact`,
+        about: { "@id": `${profile.url}/#person` },
+      },
+      personSchema,
+      organizationSchema,
+    ],
   }
-
   const channels = [
-    {
-      title: "Email",
-      value: "ayeen@mdayeen.xyz",
-      sub: "Preferred for business inquiries",
-      href: "mailto:ayeen@mdayeen.xyz",
-      icon: Mail,
-      action: "Send Email"
-    },
-    {
-      title: "Alternative Email",
-      value: "contact@mdayeen.xyz",
-      sub: "Secondary contact channel",
-      href: "mailto:contact@mdayeen.xyz",
-      icon: Mail,
-      action: "Send Email"
-    },
-    {
-      title: "WhatsApp & Call",
-      value: "+91 8919066592",
-      sub: "Instant messaging & support",
-      href: "https://wa.me/918919066592",
-      icon: Phone,
-      action: "Open WhatsApp"
-    },
-    {
-      title: "Location Office",
-      value: "Hyderabad, Telangana, India",
-      sub: "Available for on-site local briefs",
-      href: "https://maps.google.com/?q=Hyderabad",
-      icon: MapPin,
-      action: "View Map"
-    }
+    { title: "Book a conversation", value: "cal.com/anjeerlabs", sub: "Choose a time to talk about your project", href: profile.bookingUrl, icon: Calendar, action: "Find a time" },
+    { title: "Email", value: profile.email, sub: "Send your brief, questions, or an introduction", href: `mailto:${profile.email}`, icon: Mail, action: "Send an email" },
+    { title: "GitHub", value: "github.com/mdayeen", sub: "Explore code and connect", href: profile.socials[0].url, icon: Github, action: "Visit GitHub" },
+    { title: "Based in Hyderabad", value: "Hyderabad, Telangana, India", sub: "Full stack developer & co-founder of Anjeer Labs", href: profile.organization.url, icon: MapPin, action: "Meet Anjeer Labs" },
   ]
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
-      
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(schema) }} />
       <div className="min-h-screen bg-background">
         <Header />
-        
-        <main className="container py-12 max-w-4xl space-y-12">
-          {/* Header */}
-          <section className="text-center space-y-4">
-            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
-              Let's Build Something <span className="text-violet-600 dark:text-violet-400">Exceptional</span>
-            </h1>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto leading-relaxed">
-              Have a SaaS platform to develop, an ERP database schema to design, or looking to hire a Full Stack Developer in Hyderabad? Get in touch.
-            </p>
+        <main className="container py-16 max-w-4xl space-y-12">
+          <section className="space-y-5">
+            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Start a conversation</p>
+            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight">Big idea?<br /><span className="text-lime-700 dark:text-lime-400">Let&apos;s build it.</span></h1>
+            <p className="text-muted-foreground text-lg max-w-xl leading-relaxed">Tell me what you have in mind. I build web applications, SaaS products, and software that makes business operations simpler.</p>
+            <Button size="lg" className="gap-2 bg-lime-400 text-black hover:bg-lime-300" asChild><a href={profile.bookingUrl}>Book a conversation <ArrowUpRight size={18} /></a></Button>
           </section>
-
-          {/* Contact Methods Grid */}
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {channels.map((chan, idx) => {
-              const Icon = chan.icon
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-5" aria-label="Contact options">
+            {channels.map((channel) => {
+              const Icon = channel.icon
               return (
-                <div key={idx} className="border rounded-xl p-6 bg-card text-card-foreground flex flex-col justify-between space-y-4">
-                  <div className="flex gap-4 items-start">
-                    <div className="p-3 rounded-lg bg-violet-100 dark:bg-violet-950/50 text-violet-600 dark:text-violet-400 shrink-0">
-                      <Icon className="h-6 w-6" />
-                    </div>
-                    <div className="space-y-1">
-                      <h3 className="font-bold text-lg leading-tight">{chan.title}</h3>
-                      <p className="text-xs text-muted-foreground">{chan.sub}</p>
-                      <p className="font-semibold text-foreground break-all pt-1">{chan.value}</p>
+                <article key={channel.title} className="border rounded-xl p-6 bg-card text-card-foreground flex flex-col justify-between gap-6">
+                  <div className="space-y-4">
+                    <Icon className="h-6 w-6 text-lime-700 dark:text-lime-400" aria-hidden="true" />
+                    <div className="space-y-2">
+                      <h2 className="font-semibold text-xl">{channel.title}</h2>
+                      <p className="text-sm text-muted-foreground">{channel.sub}</p>
+                      <p className="font-medium break-words">{channel.value}</p>
                     </div>
                   </div>
-                  <Button variant="outline" className="w-full gap-2 border-violet-200 dark:border-violet-800 hover:bg-violet-50 dark:hover:bg-violet-950/20" asChild>
-                    <a href={chan.href} target={chan.title === "Location Office" || chan.title === "WhatsApp & Call" ? "_blank" : undefined} rel={chan.title === "Location Office" || chan.title === "WhatsApp & Call" ? "noopener noreferrer" : undefined}>
-                      {chan.action} <ExternalLink className="h-4 w-4" />
-                    </a>
-                  </Button>
-                </div>
+                  <Button variant="outline" className="w-full justify-between" asChild><a href={channel.href}>{channel.action}<ArrowUpRight className="h-4 w-4" aria-hidden="true" /></a></Button>
+                </article>
               )
             })}
-          </section>
-
-          {/* Contact Notice */}
-          <section className="border rounded-2xl p-6 sm:p-8 bg-muted/40 text-center space-y-4 max-w-2xl mx-auto">
-            <h2 className="font-bold text-xl">Service Response Time</h2>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              I read and respond to direct client emails daily. For urgent development emergencies, system crashes, or immediate SaaS consultation queries, reaching out via WhatsApp is recommended. I am available Monday through Saturday, from 9:00 AM to 7:00 PM IST.
-            </p>
           </section>
         </main>
       </div>

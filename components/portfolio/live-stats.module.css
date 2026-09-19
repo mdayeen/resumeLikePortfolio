@@ -1,0 +1,31 @@
+.stats {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.1px;
+  color: #a8b39b;
+}
+.stats > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.stats svg {
+  color: #b0d56b;
+}
+.stats strong {
+  font-weight: 500;
+  color: #e8eddc;
+  font-variant-numeric: tabular-nums;
+}
+.unavailable {
+  color: #a8b39b;
+}
+@media (max-width: 600px) {
+  .stats {
+    gap: 14px;
+    font-size: 9px;
+  }
+}

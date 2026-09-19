@@ -1,118 +1,243 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Github, Linkedin, Mail, Menu, X } from "lucide-react"
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import {
+  ArrowUpRight,
+  Github,
+  Linkedin,
+  Mail,
+  Menu,
+  X,
+  Play,
+  Pause,
+} from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
-import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet"
+import styles from "@/components/portfolio/header.module.css";
+import { LiveStats } from "@/components/portfolio/live-stats";
 
-export function Header() {
-  const [isOpen, setIsOpen] = useState(false)
-  const pathname = usePathname()
+const navItems = [
+  { name: "Work", href: "/#work" },
+  { name: "About", href: "/#about" },
+  { name: "Playground", href: "/#playground" },
+];
 
-  const navItems = [
-    { name: "About", href: "/about" },
-    { name: "Projects", href: "/projects" },
-    { name: "Blog", href: "/blog" },
-    { name: "Resume", href: "/resume" },
-    { name: "Contact", href: "/contact" }
-  ]
+export function Header({
+  motionEnabled,
+  onToggleMotion,
+}: { motionEnabled?: boolean; onToggleMotion?: () => void } = {}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const firstLinkRef = useRef<HTMLAnchorElement>(null);
+  const pathname = usePathname();
 
-  const isActive = (href: string) => {
-    if (href === "/") return pathname === "/"
-    return pathname.startsWith(href)
-  }
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    firstLinkRef.current?.focus();
+
+    const closeOutside = (event: PointerEvent) => {
+      if (
+        event.target instanceof Node &&
+        !headerRef.current?.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+    const desktop = window.matchMedia("(min-width: 768px)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) setIsOpen(false);
+    };
+
+    document.addEventListener("pointerdown", closeOutside);
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => {
+      document.removeEventListener("pointerdown", closeOutside);
+      desktop.removeEventListener("change", closeOnDesktop);
+    };
+  }, [isOpen]);
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="font-bold text-xl flex items-center gap-1">
-          <span className="text-violet-600 dark:text-violet-400">Md</span>Ayeen
+    <header
+      ref={headerRef}
+      className={styles.header}
+      onKeyDown={(event) => {
+        if (event.key === "Escape" && isOpen) {
+          event.preventDefault();
+          setIsOpen(false);
+          triggerRef.current?.focus();
+        }
+      }}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget))
+          setIsOpen(false);
+      }}
+    >
+      <div className={styles.inner}>
+        <Link
+          href="/"
+          className={styles.brand}
+          aria-label="Ayeen — home"
+          onClick={() => setIsOpen(false)}
+        >
+          <svg
+            className={styles.brandMark}
+            width="27"
+            height="27"
+            viewBox="0 0 32 32"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M16 2v28M2 16h28M6.1 6.1l19.8 19.8M6.1 25.9 25.9 6.1"
+              stroke="currentColor"
+              strokeWidth="4.5"
+            />
+          </svg>
+          <span>
+            ayeen<span className={styles.brandDot}>.</span>
+          </span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6" aria-label="Main navigation">
+        <nav className={styles.desktopNav} aria-label="Main navigation">
           {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`text-sm font-medium transition-colors hover:text-violet-600 dark:hover:text-violet-400 ${
-                isActive(item.href) ? "text-violet-600 dark:text-violet-400 font-semibold" : "text-muted-foreground"
-              }`}
-            >
+            <Link key={item.href} href={item.href} className={styles.navLink}>
               {item.name}
             </Link>
           ))}
-          <ThemeToggle />
         </nav>
 
-        {/* Mobile Navigation Toggle */}
-        <div className="flex md:hidden items-center space-x-2">
-          <ThemeToggle />
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Toggle menu">
-                <Menu className="h-5 w-5" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] p-6 flex flex-col justify-between">
-              <div>
-                <SheetHeader className="border-b pb-4 mb-6">
-                  <SheetTitle className="text-2xl font-bold text-violet-600 dark:text-violet-400 text-left">
-                    Navigation
-                  </SheetTitle>
-                </SheetHeader>
-                <nav className="flex flex-col space-y-4">
-                  {navItems.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={() => setIsOpen(false)}
-                      className={`text-lg font-medium transition-colors hover:text-violet-600 dark:hover:text-violet-400 ${
-                        isActive(item.href) ? "text-violet-600 dark:text-violet-400 font-semibold" : "text-muted-foreground"
-                      }`}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </nav>
-              </div>
-              <div className="border-t pt-6">
-                <div className="flex justify-center space-x-6">
-                  <Link
-                    href="https://github.com/mdayeen"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-violet-600 dark:hover:text-violet-400"
-                    aria-label="GitHub profile"
-                  >
-                    <Github className="h-6 w-6" />
-                  </Link>
-                  <Link
-                    href="https://linkedin.com/in/mdyeen"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-violet-600 dark:hover:text-violet-400"
-                    aria-label="LinkedIn profile"
-                  >
-                    <Linkedin className="h-6 w-6" />
-                  </Link>
-                  <Link
-                    href="mailto:ayeen0410@gmail.com"
-                    className="text-muted-foreground hover:text-violet-600 dark:hover:text-violet-400"
-                    aria-label="Email address"
-                  >
-                    <Mail className="h-6 w-6" />
-                  </Link>
-                </div>
-              </div>
-            </SheetContent>
-          </Sheet>
+        <div className={styles.actions}>
+          <span className={styles.status}>
+            <span /> Open to collabs
+          </span>
+          <a
+            href="https://cal.com/anjeerlabs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.contactLink}
+          >
+            Book a call{" "}
+            <ArrowUpRight size={17} strokeWidth={1.8} aria-hidden="true" />
+          </a>
+        </div>
+
+        <button
+          ref={triggerRef}
+          type="button"
+          className={styles.menuToggle}
+          aria-expanded={isOpen}
+          aria-controls="mobile-navigation"
+          aria-label={isOpen ? "Close navigation" : "Open navigation"}
+          onClick={() => setIsOpen((open) => !open)}
+        >
+          {isOpen ? (
+            <X size={23} aria-hidden="true" />
+          ) : (
+            <Menu size={23} aria-hidden="true" />
+          )}
+        </button>
+      </div>
+
+      <div className={styles.utilityBar}>
+        <LiveStats />
+        <div className={styles.utilityActions}>
+          {onToggleMotion && (
+            <button
+              className={styles.motionToggle}
+              onClick={onToggleMotion}
+              aria-pressed={motionEnabled}
+              aria-label="Toggle scroll motion"
+              title={
+                motionEnabled
+                  ? "Scroll motion on"
+                  : "Scroll motion off — enable the full experience"
+              }
+            >
+              {motionEnabled ? <Pause size={11} /> : <Play size={11} />}
+              <span>MOTION {motionEnabled ? "ON" : "OFF"}</span>
+            </button>
+          )}
+          <nav
+            className={styles.viewSwitch}
+            aria-label="Portfolio reading mode"
+          >
+            <Link
+              href="/"
+              aria-current={pathname !== "/agents" ? "page" : undefined}
+            >
+              Human
+            </Link>
+            <Link
+              href="/agents"
+              aria-current={pathname === "/agents" ? "page" : undefined}
+            >
+              <span aria-hidden="true">&lt;/&gt;</span> Agent
+            </Link>
+          </nav>
+        </div>
+      </div>
+      <div
+        id="mobile-navigation"
+        className={styles.mobilePanel}
+        hidden={!isOpen}
+      >
+        <nav className={styles.mobileNav} aria-label="Mobile navigation">
+          {navItems.map((item, index) => (
+            <Link
+              key={item.href}
+              ref={index === 0 ? firstLinkRef : undefined}
+              href={item.href}
+              onClick={() => setIsOpen(false)}
+            >
+              <span className={styles.linkNumber}>0{index + 1}</span>
+              {item.name}
+              <ArrowUpRight size={23} strokeWidth={1.4} aria-hidden="true" />
+            </Link>
+          ))}
+          <a
+            href="https://cal.com/anjeerlabs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.mobileContact}
+            onClick={() => setIsOpen(false)}
+          >
+            Book a call{" "}
+            <ArrowUpRight size={23} strokeWidth={1.4} aria-hidden="true" />
+          </a>
+        </nav>
+        <div className={styles.mobileFooter}>
+          <span className={styles.status}>
+            <span /> Open to collabs
+          </span>
+          <div className={styles.socialLinks}>
+            <a
+              href="https://github.com/mdayeen"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub profile"
+            >
+              <Github size={19} />
+            </a>
+            <a
+              href="https://linkedin.com/in/mdyeen"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+            >
+              <Linkedin size={19} />
+            </a>
+            <a href="mailto:ayeen0410@gmail.com" aria-label="Email Ayeen">
+              <Mail size={19} />
+            </a>
+          </div>
         </div>
       </div>
     </header>
-  )
+  );
 }

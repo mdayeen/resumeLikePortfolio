@@ -1,0 +1,103 @@
+.dock {
+  position: fixed;
+  bottom: 18px;
+  right: 20px;
+  z-index: 45;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #76815b66;
+  border-radius: 40px;
+  background: #151b12ed;
+  color: #d4ff5f;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 25px #0003;
+  padding: 5px;
+}
+.dock button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+  min-height: 33px;
+  border-radius: 30px;
+}
+.dock button:focus-visible {
+  outline: 2px solid #d4ff5f;
+  outline-offset: 3px;
+}
+.bars {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  height: 15px;
+}
+.bars i {
+  height: 3px;
+  width: 2px;
+  background: #d4ff5f;
+  border-radius: 2px;
+}
+.dock[data-playing="true"] .bars i {
+  animation: wave 1.2s ease-in-out infinite;
+}
+.bars i:nth-child(2) {
+  animation-delay: -0.3s !important;
+}
+.bars i:nth-child(3) {
+  animation-delay: -0.7s !important;
+}
+.bars i:nth-child(4) {
+  animation-delay: -0.5s !important;
+}
+.volume {
+  padding-left: 12px;
+  display: flex;
+}
+.volume input {
+  width: 62px;
+  accent-color: #d4ff5f;
+  height: 16px;
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@keyframes wave {
+  0%,
+  100% {
+    height: 3px;
+  }
+  50% {
+    height: 14px;
+  }
+}
+@media (max-width: 600px) {
+  .dock {
+    bottom: 12px;
+    right: 12px;
+  }
+  .dock button {
+    font-size: 7px;
+    gap: 7px;
+    padding: 8px 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bars i {
+    animation: none !important;
+  }
+  .dock[data-playing="true"] .bars i {
+    height: 9px;
+  }
+}

@@ -4,12 +4,17 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Mohammed Ayeenuddin Portfolio',
     short_name: 'MdAyeen',
-    description: 'Mohammed Ayeenuddin - Full Stack MERN Developer & SaaS Architect',
+    description: 'Mohammed Ayeenuddin - Full Stack Developer & SaaS Architect',
     start_url: '/',
     display: 'standalone',
-    background_color: '#09090b',
-    theme_color: '#7c3aed',
+    background_color: '#111311',
+    theme_color: '#111311',
     icons: [
+      {
+        src: '/icon.svg',
+        sizes: 'any',
+        type: 'image/svg+xml',
+      },
       {
         src: '/favicon.ico',
         sizes: 'any',

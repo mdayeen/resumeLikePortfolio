@@ -18,6 +18,10 @@ yarn-error.log*
 
 # env files
 .env*
+!.env.example
+
+# Local live counters and game data (never commit)
+/.portfolio-data/
 
 # vercel
 .vercel

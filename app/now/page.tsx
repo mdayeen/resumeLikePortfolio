@@ -38,7 +38,7 @@ export default function Now() {
       <main className="container py-12 max-w-3xl space-y-10">
         {/* Intro */}
         <section className="space-y-4">
-          <div className="flex items-center gap-2 text-violet-600 dark:text-violet-400 font-semibold text-sm uppercase tracking-wider">
+          <div className="flex items-center gap-2 text-lime-700 dark:text-lime-400 font-semibold text-sm uppercase tracking-wider">
             <Sparkles className="h-4 w-4" /> Live Focus Status
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
@@ -48,7 +48,7 @@ export default function Now() {
             This is a "now" page inspired by Derek Sivers' concept. It serves as a public registry of my current priorities, active projects, and technical learning objectives.
           </p>
           <div className="flex items-center gap-1.5 text-xs text-muted-foreground bg-muted border w-fit px-3 py-1 rounded-full">
-            <Calendar className="h-3.5 w-3.5 text-violet-500" />
+            <Calendar className="h-3.5 w-3.5 text-lime-500" />
             <span>Last updated: June 5, 2026</span>
           </div>
         </section>
@@ -61,7 +61,7 @@ export default function Now() {
             const Icon = item.icon
             return (
               <div key={idx} className="flex gap-4 border p-6 rounded-xl bg-card text-card-foreground">
-                <div className="p-3 rounded-lg bg-violet-100 dark:bg-violet-950 text-violet-600 dark:text-violet-400 shrink-0 h-fit">
+                <div className="p-3 rounded-lg bg-lime-100 dark:bg-lime-950 text-lime-700 dark:text-lime-400 shrink-0 h-fit">
                   <Icon className="h-6 w-6" />
                 </div>
                 <div className="space-y-2">
@@ -77,7 +77,7 @@ export default function Now() {
         <section className="text-center text-sm text-muted-foreground pt-4">
           <p>
             Looking to collaborate on any of the above, or need technical help building a platform? 
-            Check out my <Link href="/contact" className="text-violet-600 dark:text-violet-400 hover:underline">Contact page</Link> to get in touch.
+            Check out my <Link href="/contact" className="text-lime-700 dark:text-lime-400 hover:underline">Contact page</Link> to get in touch.
           </p>
         </section>
       </main>

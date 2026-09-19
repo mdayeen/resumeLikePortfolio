@@ -7,10 +7,10 @@ import { Badge } from "@/components/ui/badge"
 import { Header } from "@/components/header"
 
 export const metadata: Metadata = {
-  title: "Professional Resume | Mohammed Ayeenuddin",
-  description: "Curriculum Vitae of Mohammed Ayeenuddin, Full Stack MERN Developer, SaaS Architect, and Co-Founder of Anjeer Labs. Detailed education, skills, and work experiences.",
+  title: "Professional Resume",
+  description: "Curriculum Vitae of Mohammed Ayeenuddin, Full Stack Developer, SaaS Architect, and Co-Founder of Anjeer Labs. Detailed education, skills, and work experiences.",
   alternates: {
-    canonical: "./",
+    canonical: "/resume",
   }
 }
 
@@ -26,6 +26,16 @@ export default function Resume() {
         "Engineered the Rotana Store WMS platform, handling franchise inventories, supplier invoice credits, and automated delivery pipelines.",
         "Managed database schema structures in PostgreSQL and MongoDB, creating optimized indexes and handling high-performance queries.",
         "Built responsive web apps with Next.js, React, TypeScript, and Tailwind CSS."
+      ]
+    },
+    {
+      role: "Computer Teacher",
+      company: "Various Schools / Institutions",
+      period: "June 2025 - April 2026",
+      location: "Hyderabad, India",
+      details: [
+        "Taught computer science fundamentals, programming concepts, and web development to students.",
+        "Developed comprehensive lesson plans and practical lab exercises to foster technical skills."
       ]
     },
     {
@@ -53,7 +63,7 @@ export default function Resume() {
 
   const skills = {
     languages: ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3", "SQL"],
-    frameworks: ["React.js", "Next.js 15 (App Router)", "Node.js", "Express.js"],
+    frameworks: ["React.js", "Next.js (App Router)", "Node.js", "Express.js"],
     databases: ["PostgreSQL", "MongoDB", "Redis"],
     tools: ["Git", "GitHub", "Vercel", "AWS", "Cloudflare R2", "Linux", "Docker"]
   }
@@ -69,7 +79,7 @@ export default function Resume() {
             <h1 className="text-xl font-bold">Mohammed Ayeenuddin</h1>
             <p className="text-xs text-muted-foreground">Full Stack Developer Curriculum Vitae</p>
           </div>
-          <Button className="bg-violet-600 hover:bg-violet-700 text-white gap-2" asChild>
+          <Button className="bg-lime-700 hover:bg-lime-800 text-white gap-2" asChild>
             <a href="/Ayeenuddin 2page.pdf" download="Mohammed_Ayeenuddin_CV.pdf">
               <Download className="h-4 w-4" /> Download PDF Version
             </a>
@@ -81,9 +91,9 @@ export default function Resume() {
           {/* Header */}
           <div className="text-center space-y-3 pb-6 border-b">
             <h2 className="text-3xl font-extrabold tracking-tight">Mohammed Ayeenuddin</h2>
-            <p className="text-violet-600 dark:text-violet-400 font-semibold text-lg">Full Stack MERN Developer & SaaS Architect</p>
+            <p className="text-lime-700 dark:text-lime-400 font-semibold text-lg">Full Stack Developer & SaaS Architect</p>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
-              <span className="flex items-center gap-1.5"><Mail className="h-4 w-4" /> ayeen@mdayeen.xyz</span>
+              <span className="flex items-center gap-1.5"><Mail className="h-4 w-4" /> ayeen0410@gmail.com</span>
               <span className="flex items-center gap-1.5"><Phone className="h-4 w-4" /> +91 8919066592</span>
               <span className="flex items-center gap-1.5"><MapPin className="h-4 w-4" /> Hyderabad, India</span>
               <span className="flex items-center gap-1.5"><Globe className="h-4 w-4" /> https://mdayeen.xyz</span>
@@ -92,15 +102,15 @@ export default function Resume() {
 
           {/* Profile Summary */}
           <div className="space-y-3">
-            <h3 className="text-xl font-bold uppercase tracking-wider border-b pb-1 text-violet-600 dark:text-violet-400">Professional Summary</h3>
+            <h3 className="text-xl font-bold uppercase tracking-wider border-b pb-1 text-lime-700 dark:text-lime-400">Professional Summary</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Results-driven Full Stack MERN Developer and Co-Founder of Anjeer Labs based in Hyderabad. Specialized in engineering performant, secure web SaaS platforms, database architectures, and custom enterprise tools. Strong expertise in optimizing React performance, writing secure REST APIs, designing PostgreSQL/MongoDB schemas, and orchestrating serverless infrastructure.
+              Results-driven Full Stack Developer and Co-Founder of Anjeer Labs based in Hyderabad. Specialized in engineering performant, secure web SaaS platforms, database architectures, and custom enterprise tools. Strong expertise in optimizing React performance, writing secure REST APIs, designing PostgreSQL/MongoDB schemas, and orchestrating serverless infrastructure.
             </p>
           </div>
 
           {/* Core Skills */}
           <div className="space-y-3">
-            <h3 className="text-xl font-bold uppercase tracking-wider border-b pb-1 text-violet-600 dark:text-violet-400">Technical Skills</h3>
+            <h3 className="text-xl font-bold uppercase tracking-wider border-b pb-1 text-lime-700 dark:text-lime-400">Technical Skills</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
               <div>
                 <span className="font-bold text-muted-foreground block mb-1">Languages & Dialects</span>
@@ -123,7 +133,7 @@ export default function Resume() {
 
           {/* Professional Experience */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold uppercase tracking-wider border-b pb-1 text-violet-600 dark:text-violet-400">Work Experience</h3>
+            <h3 className="text-xl font-bold uppercase tracking-wider border-b pb-1 text-lime-700 dark:text-lime-400">Work Experience</h3>
             <div className="space-y-6">
               {experiences.map((exp, idx) => (
                 <div key={idx} className="space-y-1">
@@ -131,7 +141,7 @@ export default function Resume() {
                     <span className="font-bold text-base">{exp.role}</span>
                     <span className="text-xs text-muted-foreground font-semibold bg-muted px-2 py-0.5 rounded">{exp.period}</span>
                   </div>
-                  <div className="text-sm font-semibold text-violet-600 dark:text-violet-400">
+                  <div className="text-sm font-semibold text-lime-700 dark:text-lime-400">
                     {exp.company} <span className="text-muted-foreground text-xs font-normal">| {exp.location}</span>
                   </div>
                   <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1.5 leading-relaxed pt-1">
@@ -146,14 +156,14 @@ export default function Resume() {
 
           {/* Education */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold uppercase tracking-wider border-b pb-1 text-violet-600 dark:text-violet-400">Education</h3>
+            <h3 className="text-xl font-bold uppercase tracking-wider border-b pb-1 text-lime-700 dark:text-lime-400">Education</h3>
             <div className="space-y-4 text-sm">
               <div className="space-y-1">
                 <div className="flex justify-between items-start flex-wrap gap-1">
                   <span className="font-bold text-base">Bachelor of Engineering in Computer Science</span>
                   <span className="text-xs text-muted-foreground font-semibold bg-muted px-2 py-0.5 rounded">2020 - 2024</span>
                 </div>
-                <p className="text-violet-600 dark:text-violet-400 font-semibold text-sm">Lords Institute of Engineering And Technology (Osmania University)</p>
+                <p className="text-lime-700 dark:text-lime-400 font-semibold text-sm">Lords Institute of Engineering And Technology (Osmania University)</p>
                 <p className="text-xs text-muted-foreground">Hyderabad, India | Graduated with CSE Honors</p>
               </div>
               <div className="space-y-1">
@@ -161,7 +171,7 @@ export default function Resume() {
                   <span className="font-bold text-base">Intermediate Board of Education (MPC)</span>
                   <span className="text-xs text-muted-foreground font-semibold bg-muted px-2 py-0.5 rounded">2017 - 2019</span>
                 </div>
-                <p className="text-violet-600 dark:text-violet-400 font-semibold text-sm">Sri Chandra Junior College</p>
+                <p className="text-lime-700 dark:text-lime-400 font-semibold text-sm">Sri Chandra Junior College</p>
                 <p className="text-xs text-muted-foreground">Hyderabad, India</p>
               </div>
             </div>
@@ -171,3 +181,4 @@ export default function Resume() {
     </div>
   )
 }
+

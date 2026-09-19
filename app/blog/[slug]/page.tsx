@@ -83,7 +83,7 @@ export default async function BlogPage(props: { params: Promise<{ slug: string }
 
           {/* Article Header */}
           <header className="space-y-4">
-            <Badge className="bg-violet-600 hover:bg-violet-700 text-white w-fit">{article.category}</Badge>
+            <Badge className="bg-lime-700 hover:bg-lime-800 text-white w-fit">{article.category}</Badge>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
               {article.title}
             </h1>

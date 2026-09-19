@@ -28,7 +28,7 @@ export default function Uses() {
       title: "Core Stack & Technologies",
       icon: Terminal,
       items: [
-        { name: "Next.js 15 & React 19", desc: "My framework of choice for building fast, SEO-optimized, pre-rendered applications." },
+        { name: "Next.js & React 19", desc: "My framework of choice for building fast, SEO-optimized, pre-rendered applications." },
         { name: "Node.js & Express.js", desc: "Backend execution environments for running REST APIs and workers." },
         { name: "PostgreSQL & MongoDB", desc: "Relational database structures for ERP logs, and document stores for rapid SaaS iterations." },
         { name: "Tailwind CSS & Shadcn UI", desc: "For styling and assembly of clean, accessible web components." }
@@ -61,7 +61,7 @@ export default function Uses() {
       <main className="container py-12 max-w-4xl space-y-10">
         {/* Intro */}
         <section className="space-y-4">
-          <div className="flex items-center gap-2 text-violet-600 dark:text-violet-400 font-semibold text-sm uppercase tracking-wider">
+          <div className="flex items-center gap-2 text-lime-700 dark:text-lime-400 font-semibold text-sm uppercase tracking-wider">
             <Sparkles className="h-4 w-4" /> Gear & Software
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
@@ -81,7 +81,7 @@ export default function Uses() {
             return (
               <Card key={idx} className="bg-card border text-card-foreground">
                 <CardHeader className="flex flex-row items-center gap-3 border-b pb-4 mb-4">
-                  <div className="p-2 rounded bg-violet-100 dark:bg-violet-950 text-violet-600 dark:text-violet-400">
+                  <div className="p-2 rounded bg-lime-100 dark:bg-lime-950 text-lime-700 dark:text-lime-400">
                     <Icon className="h-5 w-5" />
                   </div>
                   <CardTitle className="text-xl font-bold">{sect.title}</CardTitle>

@@ -32,7 +32,7 @@ const projectsDb: Record<string, ProjectData> = {
     category: "WMS & Franchise ERP",
     period: "Nov 2022 - April 2023",
     client: "Sahulat Hyderabad",
-    demo: "https://sahulathyd.org/",
+    demo: "https://rotana-web-app.vercel.app/",
     desc: "An enterprise Warehouse Management System (WMS) and Franchise Management ERP designed to run complex logistical networks.",
     overview: "Rotana Store Platform is an enterprise-grade digital ecosystem designed to streamline retail franchise operations, supplier accounting, and warehouse logistics. Prior to this platform, franchise inventory reporting was handled manually via spreadsheets and physical ledgers, leading to stock discrepancies, delayed supply chains, and reconciliation errors in supplier payouts.",
     problem: "The management team faced three major hurdles: (1) real-time visibility of stock counts across multiple franchise outlets was non-existent; (2) tracking supplier invoices and B2B credit terms was manual and error-prone; and (3) staff operation logs lacked security parameters, leading to inventory leakage.",
@@ -65,7 +65,7 @@ const projectsDb: Record<string, ProjectData> = {
     category: "Travel Booking Platform",
     period: "June 2024 - August 2024",
     client: "Al-Fahads Agency",
-    demo: "https://mau-overseas.netlify.app/",
+    demo: "https://www.alfahadstours.com/",
     desc: "A fully responsive reservation portal with admin statistics panels, staff operations registers, and secure media storage.",
     overview: "Al-Fahads Tours & Travels is a high-traffic travel booking web platform designed to automate client inquiries, package customization logs, and administrative bookings. It transitions a traditionally phone-based booking agency into a structured online portal.",
     problem: "The agency struggled with managing high volumes of travel documents, visa applications, and client passport scans. Storing these assets on local office machines was a security risk, and retrieving files took substantial operational time.",
@@ -161,7 +161,7 @@ const projectsDb: Record<string, ProjectData> = {
     category: "Education ERP",
     period: "January 2025 - March 2025",
     client: "Institutional Client",
-    demo: "https://next-interior.vercel.app/",
+    demo: "http://schoolrepo.com/",
     desc: "A multi-tenant academic management platform supporting multi-role access panels.",
     overview: "The School ERP is an enterprise management system developed to replace manual paperwork in educational institutes. It manages academic scheduling, fee tracking, attendance registries, and grades logs under a unified system.",
     problem: "Managing communications between administrators, teachers, and parents was fragmented. Calculating fee dues, tracking partial payments, and notifying parents about student absences required significant manual work.",
@@ -279,7 +279,7 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
           {/* Project Title Header */}
           <section className="space-y-4">
             <div className="flex flex-wrap gap-2 items-center">
-              <Badge className="bg-violet-600 hover:bg-violet-700 text-white">{project.category}</Badge>
+              <Badge className="bg-lime-700 hover:bg-lime-800 text-white">{project.category}</Badge>
               <Badge variant="outline" className="flex items-center gap-1">
                 <Calendar className="h-3 w-3" /> {project.period}
               </Badge>
@@ -291,7 +291,7 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
               {project.desc}
             </p>
             <div className="flex gap-4 pt-2">
-              <Button asChild className="bg-violet-600 hover:bg-violet-700 text-white gap-2">
+              <Button asChild className="bg-lime-700 hover:bg-lime-800 text-white gap-2">
                 <a href={project.demo} target="_blank" rel="noopener noreferrer">
                   View Live Portal <ExternalLink className="h-4 w-4" />
                 </a>
@@ -307,7 +307,7 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
           {/* Overview */}
           <section className="space-y-4">
             <h2 className="text-3xl font-bold flex items-center gap-2">
-              <Layers className="h-6 w-6 text-violet-500" /> Project Overview
+              <Layers className="h-6 w-6 text-lime-500" /> Project Overview
             </h2>
             <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
               {project.overview}
@@ -317,7 +317,7 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
           {/* Business Problem */}
           <section className="space-y-4">
             <h2 className="text-3xl font-bold flex items-center gap-2">
-              <ShieldAlert className="h-6 w-6 text-violet-500" /> The Business Problem
+              <ShieldAlert className="h-6 w-6 text-lime-500" /> The Business Problem
             </h2>
             <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
               {project.problem}
@@ -330,18 +330,18 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
           <section className="space-y-6">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold flex items-center gap-2">
-                <Cpu className="h-6 w-6 text-violet-500" /> {project.architectureTitle}
+                <Cpu className="h-6 w-6 text-lime-500" /> {project.architectureTitle}
               </h2>
               <p className="text-muted-foreground leading-relaxed">
                 {project.architectureDesc}
               </p>
             </div>
-            <div className="space-y-4 pl-4 border-l border-violet-100 dark:border-violet-900 ml-2">
+            <div className="space-y-4 pl-4 border-l border-lime-100 dark:border-lime-900 ml-2">
               {project.architectureSteps.map((step, idx) => {
                 const parts = step.split(": ")
                 return (
                   <div key={idx} className="relative space-y-1">
-                    <div className="absolute -left-[23px] top-1.5 w-2.5 h-2.5 rounded-full bg-violet-500" />
+                    <div className="absolute -left-[23px] top-1.5 w-2.5 h-2.5 rounded-full bg-lime-500" />
                     <h4 className="font-bold text-foreground">{parts[0]}</h4>
                     <p className="text-sm text-muted-foreground leading-relaxed">{parts[1]}</p>
                   </div>
@@ -354,7 +354,7 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
 
           {/* Tech Stack Badge List */}
           <section className="space-y-4">
-            <h3 className="font-bold text-xl uppercase tracking-wider text-violet-600 dark:text-violet-400">
+            <h3 className="font-bold text-xl uppercase tracking-wider text-lime-700 dark:text-lime-400">
               Technology Stack Used
             </h3>
             <div className="flex flex-wrap gap-2">
@@ -368,7 +368,7 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
 
           {/* Challenges & Blockers */}
           <section className="space-y-4">
-            <h3 className="font-bold text-xl uppercase tracking-wider text-violet-600 dark:text-violet-400">
+            <h3 className="font-bold text-xl uppercase tracking-wider text-lime-700 dark:text-lime-400">
               Challenges Solved
             </h3>
             <ul className="space-y-3">
@@ -383,7 +383,7 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
 
           {/* Results Checklist */}
           <section className="space-y-4">
-            <h3 className="font-bold text-xl uppercase tracking-wider text-violet-600 dark:text-violet-400">
+            <h3 className="font-bold text-xl uppercase tracking-wider text-lime-700 dark:text-lime-400">
               Project Results
             </h3>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -398,7 +398,7 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
 
           {/* Roadmap */}
           <section className="space-y-4">
-            <h3 className="font-bold text-xl uppercase tracking-wider text-violet-600 dark:text-violet-400">
+            <h3 className="font-bold text-xl uppercase tracking-wider text-lime-700 dark:text-lime-400">
               Future Roadmap
             </h3>
             <div className="space-y-3 pl-4 border-l border-emerald-100 dark:border-emerald-950 ml-2">

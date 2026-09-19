@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <title>Explore and learn cursor</title>
+  <path d="M8 12Q14 10 19 14Q24 10 30 12V25Q24 23 19 28Q14 23 8 25Z" fill="#d4ff5f" stroke="#f3f1e9" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M8 12Q14 10 19 14Q24 10 30 12V25Q24 23 19 28Q14 23 8 25ZM19 14V28" fill="none" stroke="#111311" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="m14.5 16.5-3 3 3 3m9-6 3 3-3 3" fill="none" stroke="#111311" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m3 3 13 7-6 2-3 6Z" fill="#f3f1e9" stroke="#f3f1e9" stroke-width="4" stroke-linejoin="round"/>
+  <path d="m3 3 13 7-6 2-3 6Z" fill="#f3f1e9" stroke="#111311" stroke-width="1.8" stroke-linejoin="round"/>
+</svg>
